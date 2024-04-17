@@ -7,10 +7,10 @@ Version: Net 8.0
 #### INSTALACIÓN
 [dotnet add package MediatR --version 12.2.0](https://www.nuget.org/packages/MediatR/#supportedframeworks-body-tab)
 
-### OBJETIVO
+#### OBJETIVO
 Crear aplicaciones con codigo limpio y componentes desacoplados con patrón MediatR 
 
-### CASO DE USO
+#### CASO DE USO
 1. Actualizar un item propieddes del producto si el precio ha disminuido 30% enviar correo de notificación al cliente del producto con descuento. 
    
 #### CONFIGURACIÓN
