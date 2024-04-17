@@ -15,14 +15,7 @@ Crear aplicaciones con codigo limpio y componentes desacoplados con patrón Medi
    
 #### CONFIGURACIÓN
 
-Controllers.cs
-| DefaultExample  | MediatRExample |
-| ------------------------------------------------------------------- | ------------- |
-| ```csharp                                                           |               |
-| sing Microsoft.AspNetCore.Mvc;                                      |               |
-| using PopularLibraries.MediatRExample.Dtos;                         |               |
-| ```                                                                 |               |
-
+DefaultExampleControllers.cs
 ```csharp
 sing Microsoft.AspNetCore.Mvc;
 using PopularLibraries.MediatRExample.Dtos;
@@ -49,19 +42,33 @@ public class DefaultExampleController : ControllerBase
 
 ```
 
-
+MediatRExampleController.cs
 ```csharp
+[ApiController]
+[Route("[controller]")]
+public class MediatRExampleController : ControllerBase
+{
+    //En lugar de inyectar el caso de uso se utiliza MediatR
+    //ISender es interfaz de MediatR
+    private readonly ISender _sender;
 
+    public MediatRExampleController(ISender sender)
+    {
+        _sender = sender;
+    }
+
+    //Enviar del controlador a MediatR
+    [HttpPut("item")]
+    public async Task<bool> UpdateItem(ItemDto itemDto)
+        => await _sender.Send(new UpdateItemCommand()
+        {
+            Id = itemDto.Id,
+            Price = itemDto.Price,
+            Title = itemDto.Title
+        });
+}
 
 ```
-
-
-```csharp
-
-
-```
-
-
 
 #### REFERENCIAS
 [Mediator Pattern](https://refactoring.guru/es/design-patterns/mediator)
