@@ -36,10 +36,36 @@ public class UserValidator : AbstractValidator<User>
 
 ```
 
+```
+builder.Services.AddScoped<IValidator<User>, UserValidator>();
+
+
+var app = builder.Build();
+
+app.MapPost("/user", async (User user, IValidator<User> validator) =>
+    {
+        var validationResult = await validator.ValidateAsync(user);
+
+        if (!validationResult.IsValid)
+        {
+            return string.Join(',', validationResult.Errors.Select(a => a.ErrorMessage));
+        }
+
+        return $"User created (simulated) {user.Name}";
+    })
+    .WithOpenApi();
+```
+
+
+#### REFERENCIAS
+[Fluent Validations](https://docs.fluentvalidation.net/en/latest/)
+
+
+Notas:
+a) Existen _Fluent Assertions_ para proyectos de pruebas unitarias en C#
+b) Microsoft ha estado integrando estas validaciones en sus versiones más recientes
 
 
 
-
-
-## MEDIATR
+#### MEDIATR
 
