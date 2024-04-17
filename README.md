@@ -1,19 +1,19 @@
-## FLUENT VALIDATIONS
-### PROYECTO
+### FLUENT VALIDATIONS
+#### PROYECTO
 Tipo: Minimal Api
 Version: Net 8.0
 
-### INSTALACIÓN
+#### INSTALACIÓN
 dotnet add package FluentValidation --version 11.9.0
 
-## CASO DE USO
+### CASO DE USO
 1. Validar por medio de _fluent validations_ usuarios mayores de 18 años 
 2. Validar por medio de _fluent validations_ correo del usuario con domminio _gmail.com_
 3. Validar por medio de _fluent validations_ usuarios mayores a 65 años
    
-### CONFIGURACIÓN
+#### CONFIGURACIÓN
 
-´´´csharp
+```csharp
 
 public record User(string Name, string Email, int Age, int? AgeOfRetirement);
 
@@ -34,7 +34,7 @@ public class UserValidator : AbstractValidator<User>
     }
 }
 
-´´´
+```
 
 
 
