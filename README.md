@@ -4,7 +4,7 @@ Tipo: Minimal Api
 Version: Net 8.0
 
 #### INSTALACIÓN
-dotnet add package FluentValidation --version 11.9.0
+[dotnet add package FluentValidation --version 11.9.0](https://www.nuget.org/packages/FluentValidation/)
 
 ### CASO DE USO
 1. Validar por medio de _fluent validations_ usuarios mayores de 18 años 
