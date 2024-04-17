@@ -36,7 +36,9 @@ public class UserValidator : AbstractValidator<User>
 
 ```
 
-```
+
+
+```csharp
 builder.Services.AddScoped<IValidator<User>, UserValidator>();
 
 
