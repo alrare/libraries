@@ -1,4 +1,5 @@
-### FLUENT VALIDATIONS
+## FLUENT VALIDATIONS
+
 #### PROYECTO
 Tipo: Minimal Api
 Version: Net 8.0
@@ -64,10 +65,11 @@ app.MapPost("/user", async (User user, IValidator<User> validator) =>
 
 
 Notas:
+
 a) Existen _Fluent Assertions_ para proyectos de pruebas unitarias en C#
+
 b) Microsoft ha estado integrando estas validaciones en sus versiones más recientes
 
 
-
-#### MEDIATR
+### MEDIATR
 
