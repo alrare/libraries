@@ -1,2 +1,4 @@
 ## LIBRARIES
+#### - Fluent Validation
+#### - MediatR
 
