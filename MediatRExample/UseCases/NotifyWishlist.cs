@@ -4,8 +4,8 @@ public class NotifyWishlist
 {
     public Task Execute(int id)
     {
-        //We dont need this working for the example.
-        Console.WriteLine("Logic to get who is wishlisting that ID and send the emails");
+        //No necesitamos que esto funcione para el ejemplo
+        Console.WriteLine("Lógica para saber quién incluye esa identificación en la lista de deseos y enviar los correos electrónicos");
         
         return Task.FromResult(true);
     }
