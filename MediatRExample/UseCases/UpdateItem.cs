@@ -17,9 +17,9 @@ public class UpdateItem
     {
 
         if (itemToUpdate.Title.Length > 200)
-            throw new Exception("Title must be less than 200 characters");
+            throw new Exception("El título debe tener menos de 200 caracteres.");
         if (itemToUpdate.Price <= 0)
-            throw new Exception("It can't be free");
+            throw new Exception("El producto no puede ser gratis");
 
         ItemDto existingItem = await _databaseRepository.GetItemById(itemToUpdate.Id);
         await _databaseRepository.UpdateItem(itemToUpdate.Id, itemToUpdate.Price, itemToUpdate.Title);
