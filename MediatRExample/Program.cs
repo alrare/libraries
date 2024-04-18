@@ -10,11 +10,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IDatabaseRepository, FakeDatabaseRepository>();
 builder.Services.AddControllers();
+
+
+
+//Se agrega MediatR y se pasa el Assembly
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()); 
     
 });
+
+
 
 var app = builder.Build();
 
