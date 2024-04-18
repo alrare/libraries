@@ -10,7 +10,7 @@ public interface IDatabaseRepository
 
 
 /// <summary>
-/// This is only to simulate the example.
+/// Este es un ejemplo de simulación.
 /// </summary>
 public class FakeDatabaseRepository : IDatabaseRepository
 {
