@@ -5,7 +5,7 @@ namespace PopularLibraries.MediatRExample.Items.EventHandlers;
 
 public class ItemUpdatedEventHandler : INotificationHandler<ItemUpdated>
 {
-    //We dont need this working for the example.
+    //No necesitamos que esto funcione para el ejemplo
     public async Task Handle(ItemUpdated notification, CancellationToken cancellationToken)
     {
         decimal percentageDifference = ((notification.NewPrice - notification.OldPrice) / notification.NewPrice) * 100;
