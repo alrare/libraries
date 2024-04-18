@@ -9,6 +9,9 @@ namespace PopularLibraries.MediatRExample.Controllers;
 [Route("[controller]")]
 public class MediatRExampleController : ControllerBase
 {
+
+    //En lugar de inyectar el caso de uso se utiliza MediatR
+    //ISender es interfaz de MediatR
     private readonly ISender _sender;
 
     public MediatRExampleController(ISender sender)
@@ -16,6 +19,7 @@ public class MediatRExampleController : ControllerBase
         _sender = sender;
     }
 
+    //Enviar del controlador a MediatR
     [HttpPut("item")]
     public async Task<bool> UpdateItem(ItemDto itemDto)
         => await _sender.Send(new UpdateItemCommand()
